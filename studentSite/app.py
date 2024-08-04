@@ -80,6 +80,9 @@ def upload_image():
                 f.write(image_bytes)
             image = face_recognition.load_image_file(file_path)
             face_locations = face_recognition.face_locations(image)
+            if not os.path.exists(UPLOAD_FOLDER):
+                os.makedirs(UPLOAD_FOLDER)
+            file_path = os.path.join(UPLOAD_FOLDER, filename)
 
             if len(face_locations)>1:
                 return render_template('multiple.html')
