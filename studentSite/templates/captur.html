@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fsce Capture</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='capture.css') }}">
+    
+</head>
+<body>
+    <h1>Face Capture</h1>
+    <video id="videoElement" autoplay></video>
+    <button id="startButton">Start Webcam</button>
+    <button id="captureButton">Capture Photo</button>
+    <canvas id="canvasElement" style="display: none;"></canvas>
+    <img id="photoElement" style="display: none;">
+    
+    
+    
+</body>
+
+</html>
+<script src="{{ url_for('static', filename='capture.js') }}">
+    </script>

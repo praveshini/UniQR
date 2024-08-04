@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* General body styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100vh;
+    background-color: #f0f0f0; /* Light fallback color */
+    overflow: hidden;
+}
+
+/* Background image with gradient overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg_image.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* Gradient overlay */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(162, 194, 224, 0.6), rgba(224, 247, 255, 0.6));
+    z-index: -1;
+    animation: gradientAnimation 30s ease infinite;
+}
+
+/* Keyframes for sky blue gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background: linear-gradient(135deg, rgba(162, 194, 224, 0.6), rgba(224, 247, 255, 0.6));
+    }
+    50% {
+        background: linear-gradient(135deg, rgba(204, 239, 255, 0.6), rgba(240, 255, 255, 0.6));
+    }
+    100% {
+        background: linear-gradient(135deg, rgba(162, 194, 224, 0.6), rgba(224, 247, 255, 0.6));
+    }
+}
+
+/* Container styles for the capture box */
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    width: 80vw; /* Adjusted width for responsiveness */
+    max-width: 1200px; /* Maximum width for larger screens */
+    display: flex; /* Add flexbox layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+}
+
+/* Video and photo container styles */
+.video-photo-container {
+    display: flex; /* Align video and photo side by side */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Video feed styles */
+#videoElement {
+    width: 300px; /* Fixed width for video */
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Captured photo styles */
+#photoElement {
+    width: 300px; /* Fixed width for captured photo */
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Hide the photo element initially */
+    margin-left: 1rem; /* Space between video and photo */
+}
+
+/* Header styles */
+h1 {
+    color: #333;
+    font-size: 2.5rem; /* Adjusted font size */
+    font-weight: bold; /* Bold text */
+    margin: 0; /* Remove margin */
+    padding: 1rem 0; /* Add padding */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
+    width: 100%;
+    text-align: center; /* Center the header text */
+}
+
+/* Controls styles */
+.controls {
+    display: flex; /* Add flexbox layout */
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Center the buttons vertically */
+    width: 100%; /* Full width of the container */
+    margin-top: 1rem;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 1rem 2rem; /* Adjusted padding for a bigger button */
+    margin: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem; /* Larger font size for buttons */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Add icons to buttons */
+button::before {
+    content: url('https://img.icons8.com/material-outlined/24/000000/webcam.png'); /* Webcam icon for start */
+    margin-right: 0.5rem;
+}
+
+#captureButton::before {
+    content: url('https://img.icons8.com/material-outlined/24/000000/camera.png'); /* Camera icon for capture */
+    margin-right: 0.5rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #00408d;
+}
+
+/* Hide the container and controls after capturing the photo */
+.hidden {
+    display: none;
+}
