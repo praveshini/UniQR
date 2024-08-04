@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Attendance QR</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        text-align: center;
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+      img {
+        border: 1px solid #dee2e6;
+        padding: 10px;
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Scan Me</h1>
+      <img src="{{ url_for('qr_code') }}" alt="QR Code">
+    </div>
+  </body>
+</html>

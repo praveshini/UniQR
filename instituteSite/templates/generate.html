@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate QR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='generate.css') }}"> <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <form class="form" method="post" > <!-- Specify the action to /contact -->
+            <h2>Qr Generate</h2>  
+            <div class="input-group">
+                <i class="fas fa-book"></i>
+                <input type="text" name="course" id="course" placeholder="Enter the course" required pattern="[789][0-9]{9}">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <input type="text" name="currClass" id="currClass"  placeholder="Enter the class" minlength="6" required>
+            </div>
+            <button type="button" class="btn" id="get-location" >Generate</button>
+            <div class="button-group">
+                <button type="button" class="btn" onclick="location.href='/staff-login/'">Back</button>
+                <button type="button" class="btn" onclick="location.href='/'">Sign Out</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript code -->
+    
+</body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const locButton=document.getElementById('get-location');
+        const signUpForm = document.querySelector('form');
+        
+
+
+
+
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const { latitude, longitude } = position.coords;
+                    const time = position.timestamp;
+                    const formData = new FormData(signUpForm);
+
+                    const course = formData.get('course');
+                    console.log(course);
+                    const currClass = formData.get('currClass');
+                    console.log(currClass);
+
+                    sendLocationToServer(latitude, longitude, time,course,currClass);
+                }, (error) => {
+                    console.error('Error getting location:', error);
+                });
+            } else {
+                console.error('Geolocation is not supported by this browser.');
+            }
+        }
+
+        locButton.addEventListener('click', getLocation);
+
+        function sendLocationToServer(latitude, longitude, time,course,currClass) {
+            fetch('/generate/', {  // Changed the URL here
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ latitude, longitude, time,course,currClass })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.redirect) {
+                    window.location.href = data.redirect_url;
+                } else {
+                    // Handle other responses or show a message
+                    console.log(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    });
+</script>

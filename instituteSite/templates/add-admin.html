@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add-admin.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Add Admin</h1>
+            <form action="#" method="post">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="name" name="name" placeholder="Type your name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-id-badge"></i>
+                    <input type="text" id="UserId" name="UserId" placeholder="Type your UserId" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" id="Email" name="Email" placeholder="Type your email Id" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Type your password" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="button-group">
+                <button onclick="location.href='/add-user/'" type="button">Back</button>
+                <button onclick="location.href='/'" type="button">Sign Out</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add-user.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="add-user-content">
+            <h1>Add User</h1>
+            <button class="main-button" onclick="location.href='/add-admin/'">Add Admin</button>
+            <button class="main-button" onclick="location.href='/add-staff/'">Add Staff</button>
+            <button class="main-button" onclick="location.href='/add-stud/'">Add Student</button>
+            <div class="back-buttons">
+                <button class="back" onclick="location.href='/'">Sign out</button>
+                <button class="back" onclick="location.href='/adminLogin/'">Back</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

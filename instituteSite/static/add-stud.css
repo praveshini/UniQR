@@ -1,0 +1,90 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background: url('/img.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background-color: rgba(0, 0, 0, 0.555);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+}
+
+.form-container h1 {
+    color: #faf8f8;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.form-container input {
+    width: 84%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button-center button {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container button {
+    background: linear-gradient(135deg, #6B73FF, #000DFF);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.form-container button:hover {
+    background: linear-gradient(135deg, #5a62e8, #000bb3);
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-group button {
+    width: 48%;
+    background: linear-gradient(135deg, #f379c6, #ef4af5);
+}
+
+.button-group button:hover {
+    background: linear-gradient(135deg, #e262b2, #d64bd4);
+}

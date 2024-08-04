@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('/img.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.add-user-content {
+    background-color: rgba(0, 0, 0, 0.555);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+}
+
+.add-user-content h1 {
+    color: #faf8f8;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.main-button {
+    background: linear-gradient(135deg, #eae8f3, #aeb1f3);
+    color: #0e0d0d;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.main-button:hover {
+    background: linear-gradient(135deg, #f9f9fa, #fcfcfd);
+}
+
+.back-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.back {
+    background: linear-gradient(135deg,  #f379c6, #ef4af5);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 48%;
+}
+
+.back:hover {
+    background: linear-gradient(135deg, #f8a8db, #ef96f2);
+}
