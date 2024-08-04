@@ -143,7 +143,9 @@ def isUnique(studEncode):
                     return False
             return True
 
-
+@app.route('/duplicate/', methods=['GET', 'POST'])
+def duplicate():
+    return render_template('duplicate.html')
 
 @app.route('/add-stud/', methods=['GET', 'POST'])
 def addStudent():
@@ -191,7 +193,7 @@ def addStudent():
         else:
             flash('Student already present!!')
 
-            return redirect(url_for('addStudent'),)
+            return redirect(url_for('duplicate'),)
 
             
 
