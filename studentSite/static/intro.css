@@ -1,0 +1,40 @@
+
+body{
+    background: url('/static/bg_image.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+#get-location {
+    text-align: center;
+}
+#get-location {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 1rem 2rem; /* Adjusted padding for a bigger button */
+    margin: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem; /* Larger font size for buttons */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+#get-location:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#get-location:active {
+    background-color: #00408d;
+}
