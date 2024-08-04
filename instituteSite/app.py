@@ -112,18 +112,7 @@ def addAdmin():
 
     return render_template('add-admin.html')
 
-def convertFeaturestoString(code):
-    temp=""
-    for i in code:
-        temp=temp+str(i)+','
-    return temp
 
-def convertFeaturesFromString(code):
-    temp=code.rstrip().split(',')
-    res=[]
-    for i in temp:
-        res.append(float(i))
-    return np.ndarray(res)
 
 def isUnique(studEncode):
             conn=get_db_connection()
@@ -172,6 +161,8 @@ def addStudent():
         image_filename = f"uploads/current.jpg"
         image = face_recognition.load_image_file(image_filename)
         face_locations = face_recognition.face_locations(image)
+        shutil.rmtree('uploads')
+
 
         try:
             studEncode = face_recognition.face_encodings(image)[0]
@@ -206,7 +197,6 @@ def addStudent():
 
        
 
-        shutil.rmtree('uploads')
 
         flash('Student added successfully!')
         return redirect(url_for('user'))
