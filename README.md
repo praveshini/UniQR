@@ -49,7 +49,7 @@ Access the admin dashboard at http://localhost:5000/admin.
 Add them
 # Faculty
 #### Login:
-Access the faculty dashboard at  http://localhost:5000/StaffLogin.
+Access the faculty dashboard at  http://localhost:5000/Staff-Login.
 #### Manage qr:
 Gnerates qr for particular class and share them
 # Student
