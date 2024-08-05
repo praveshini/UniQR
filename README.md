@@ -14,7 +14,7 @@ Faculty generates unique QR codes for each course and class, ensuring a secure a
 #### QR Code Scanning: 
 Allows students to scan QR codes using their mobile devices to mark their attendance.
 #### Face Recognition: 
-Utilizes OpenCV to verify student identities through facial recognition, preventing proxy attendance.
+face-recognition package that utilizes dlib library is integrated for facial recognition , preventing proxy attendance.
 #### Geolocation Tracking: 
 Records the location (latitude and longitude) and timestamp of each student during attendance to verify their presence in the designated area.
 #### Data Management: 
