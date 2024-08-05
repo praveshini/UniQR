@@ -1,4 +1,4 @@
-# **UNIQR**
+# **UniQR**
 Web application
 ## Get started  
 The QR Attendance System is an advanced attendance management application designed to streamline and automate the process of taking attendance. This system integrates QR code technology, face recognition, and geolocation data to ensure accurate and secure attendance tracking.
@@ -36,7 +36,7 @@ Developed with Flask, handling requests, processing data, and interacting with t
 #### Database:
 PostgreSQL is used to store user data, attendance records, and geolocation data.
 #### Face Recognition: 
-OpenCV library is integrated for facial recognition to authenticate students.
+face-recognition package that utilizes dlib library is integrated for facial recognition to authenticate students.
 #### QR Code Generation and Scanning:
 Libraries are used to generate and read QR codes for attendance purposes.
 #### Geolocation Tracking: 
