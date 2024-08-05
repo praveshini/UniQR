@@ -284,7 +284,7 @@ def absent():
     return "Absent Page"
 
 def generate_qr_code():
-    qr_data = "https://www.google.com/"
+    qr_data = "http://127.0.0.1:3000"
     qr = qrcode.make(qr_data)
     buffer = BytesIO()
     qr.save(buffer, format="PNG")
