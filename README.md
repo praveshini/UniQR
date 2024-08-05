@@ -70,4 +70,4 @@ Details of classes associated with courses.
 #### Student:
 Records of attendance including user ID, class ID, timestamp, and geolocation data.
 #### Faculty: 
-Contains latitude, longitude, and time fields for location data expiring after 10 minutes.
+Contains latitude, longitude, and time fields for location data expiring after 6 minutes.
